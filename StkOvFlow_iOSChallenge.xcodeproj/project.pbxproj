@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		77E139A420F7A0CD009ECAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E139A320F7A0CD009ECAD8 /* AppDelegate.swift */; };
-		77E139A620F7A0CD009ECAD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E139A520F7A0CD009ECAD8 /* ViewController.swift */; };
 		77E139A920F7A0CD009ECAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E139A720F7A0CD009ECAD8 /* Main.storyboard */; };
 		77E139AB20F7A0CF009ECAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E139AA20F7A0CF009ECAD8 /* Assets.xcassets */; };
 		77E139AE20F7A0CF009ECAD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E139AC20F7A0CF009ECAD8 /* LaunchScreen.storyboard */; };
 		77E139B920F7A0CF009ECAD8 /* StkOvFlow_iOSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E139B820F7A0CF009ECAD8 /* StkOvFlow_iOSChallengeTests.swift */; };
+		77E139C420F7CAEE009ECAD8 /* HomeTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E139C320F7CAEE009ECAD8 /* HomeTableViewVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 /* Begin PBXFileReference section */
 		77E139A020F7A0CD009ECAD8 /* StkOvFlow_iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StkOvFlow_iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E139A320F7A0CD009ECAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77E139A520F7A0CD009ECAD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77E139A820F7A0CD009ECAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77E139AA20F7A0CF009ECAD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77E139AD20F7A0CF009ECAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		77E139B420F7A0CF009ECAD8 /* StkOvFlow_iOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StkOvFlow_iOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E139B820F7A0CF009ECAD8 /* StkOvFlow_iOSChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StkOvFlow_iOSChallengeTests.swift; sourceTree = "<group>"; };
 		77E139BA20F7A0CF009ECAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E139C320F7CAEE009ECAD8 /* HomeTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				77E139A320F7A0CD009ECAD8 /* AppDelegate.swift */,
-				77E139A520F7A0CD009ECAD8 /* ViewController.swift */,
 				77E139A720F7A0CD009ECAD8 /* Main.storyboard */,
+				77E139C320F7CAEE009ECAD8 /* HomeTableViewVC.swift */,
 				77E139AA20F7A0CF009ECAD8 /* Assets.xcassets */,
 				77E139AC20F7A0CF009ECAD8 /* LaunchScreen.storyboard */,
 				77E139AF20F7A0CF009ECAD8 /* Info.plist */,
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77E139A620F7A0CD009ECAD8 /* ViewController.swift in Sources */,
+				77E139C420F7CAEE009ECAD8 /* HomeTableViewVC.swift in Sources */,
 				77E139A420F7A0CD009ECAD8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
