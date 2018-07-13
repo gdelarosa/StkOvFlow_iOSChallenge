@@ -17,13 +17,23 @@ class HomeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    var questionViewModel: QuestionViewModel! {
+        didSet {
+            questionTitleLabel?.text = questionViewModel.title
+            ownerDisplayNameLabel?.text = questionViewModel.displayName
+            numberAnswersLabel?.text = questionViewModel.answerAmount
+            if let userImage = questionViewModel.userImage {
+                ownerProfileImage.loadImage(urlString: userImage)
+            } else {
+                ownerProfileImage.showUnavailableImage()
+            }
+        }
     }
 
 }

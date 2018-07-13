@@ -1,5 +1,5 @@
 //
-//  ApiManager.swift
+//  ServiceError.swift
 //  StkOvFlow_iOSChallenge
 //
 //  Created by Gina De La Rosa on 7/12/18.
@@ -8,6 +8,9 @@
 
 import Foundation
 
-class ApiManager: NSObject {
-
+public enum ServiceError: Error {
+    case noInternetConnection
+    case decodeFailed
+    case fetchFailed
+    case other
 }
