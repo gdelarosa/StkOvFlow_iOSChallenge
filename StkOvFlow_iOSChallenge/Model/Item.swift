@@ -4,22 +4,22 @@
 //
 //  Created by Gina De La Rosa on 7/12/18.
 //  Copyright © 2018 Gina De La Rosa. All rights reserved.
-//
+//  Resource: https://app.quicktype.io/#l=swift to quickly parse JSON
 
 import Foundation
 
-struct StackExchange: Codable {
-    let items: [Item]
-    let hasMore: Bool
-    let quotaMax, quotaRemaining: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case items
-        case hasMore = "has_more"
-        case quotaMax = "quota_max"
-        case quotaRemaining = "quota_remaining"
-    }
-}
+//struct StackExchange: Codable {
+//    let items: [Item]
+//    let hasMore: Bool
+//    let quotaMax, quotaRemaining: Int
+//
+//    enum CodingKeys: String, CodingKey {
+//        case items
+//        case hasMore = "has_more"
+//        case quotaMax = "quota_max"
+//        case quotaRemaining = "quota_remaining"
+//    }
+//}
 
 struct Item: Codable {
     let tags: [String]

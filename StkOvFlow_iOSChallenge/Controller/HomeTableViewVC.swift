@@ -55,7 +55,6 @@ class HomeTableViewVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
@@ -72,10 +71,10 @@ class HomeTableViewVC: UITableViewController {
         return cell
     }
  
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return false
-    }
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        // Return false if you do not want the specified item to be editable.
+//        return false
+//    }
   
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
