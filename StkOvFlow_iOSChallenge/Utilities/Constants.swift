@@ -11,6 +11,5 @@ import Foundation
 struct Constants {
     
     static let stackExchangeApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
-    static let userImagePrefix = ""
-    static let CELL = "cell"
+    static let TableViewCell = "cell"
 }

@@ -9,32 +9,34 @@
 import Foundation
 
 struct ServiceClient {
-    
+
     static let sharedInstance = ServiceClient()
-    
-    public func fetchData<T: Decodable>(urlString: String, completion: @escaping (T?, ServiceError?) ->()) {
+
+    public func fetchData(urlString: String, completion: @escaping (QuestionResponse, ServiceError?) ->()) {
         let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!) { (data, resp, err) in
-            
+
             if !ServiceReachability.isConnectedToNetwork() {
-                completion(nil, .noInternetConnection)
+               // completion([Item], .noInternetConnection)
             }
             if let err = err {
                 print("Failed to fetch data:", err)
-                completion(nil, .fetchFailed)
+               // completion(nil, .fetchFailed)
             }
-            
+
             guard let data = data else { return }
-            
+
             do {
                 let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let obj = try decoder.decode(T.self, from: data)
+                let obj = try decoder.decode(QuestionResponse.self, from: data)
                 completion(obj, nil)
+                print(obj) //Testing
+                //completion(obj, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)
-                completion(nil, .decodeFailed)
+                //completion(nil, .decodeFailed)
             }
             }.resume()
     }
 }
+

@@ -16,16 +16,11 @@ struct QuestionViewModel {
     var answerAmount: Int?
     
     //Dependency Injection
-    init(question: Question) {
+    init(question: Item) {
         title = question.title
-        displayName = question.displayName
-        answerAmount = question.reputation
-        
-        if let userImagePath = question.profileImage {
-            userImage = Constants.userImagePrefix + userImagePath
-        } else {
-            userImage = nil
-        }
-        
+        displayName = question.owner.displayName
+        answerAmount = question.owner.reputation
+        userImage = question.owner.profileImage
+            
     }
 }

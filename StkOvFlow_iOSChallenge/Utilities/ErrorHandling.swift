@@ -11,13 +11,13 @@ import UIKit
 
 class ErrorHandling: NSObject {
     
-    var viewController: HomeTableViewVC?
+    var homeViewController: HomeTableViewVC?
     
     private func displayErrorAlert(with message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let acceptAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(acceptAction)
-        viewController?.present(alert, animated: true, completion: nil)
+        homeViewController?.present(alert, animated: true, completion: nil)
     }
     
     func handleError(_ error: ServiceError) {

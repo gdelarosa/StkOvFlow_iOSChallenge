@@ -1,5 +1,5 @@
 //
-//  Api.swift
+//  Question.swift
 //  StkOvFlow_iOSChallenge
 //
 //  Created by Gina De La Rosa on 7/12/18.
@@ -69,4 +69,8 @@ struct Owner: Codable {
 
 enum UserType: String, Codable {
     case registered = "registered"
+}
+
+struct QuestionResponse: Codable {
+    let items: [Item]
 }
