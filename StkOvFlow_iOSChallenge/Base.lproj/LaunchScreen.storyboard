@@ -18,37 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Exchange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-Gv-TdA">
-                                <rect key="frame" x="54" y="295" width="306" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="dTG-JE-nPq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-cY-JGw">
+                                <rect key="frame" x="145" y="344" width="125" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-cY-JGw">
-                                <rect key="frame" x="54" y="344" width="306" height="25"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Exchange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-Gv-TdA">
+                                <rect key="frame" x="94" y="296" width="226" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="Shz-jK-rjx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cs7-cY-JGw" firstAttribute="top" secondItem="dFq-Gv-TdA" secondAttribute="bottom" constant="26" id="5gU-B8-fl2"/>
-                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="D3N-ji-a1o"/>
-                            <constraint firstItem="cs7-cY-JGw" firstAttribute="trailing" secondItem="dFq-Gv-TdA" secondAttribute="trailing" id="FzP-E5-81b"/>
-                            <constraint firstItem="cs7-cY-JGw" firstAttribute="leading" secondItem="dFq-Gv-TdA" secondAttribute="leading" id="HCE-LW-jUO"/>
-                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="275" id="J4j-PC-4Ev"/>
-                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rZS-fn-coF"/>
+                            <constraint firstItem="cs7-cY-JGw" firstAttribute="top" secondItem="dFq-Gv-TdA" secondAttribute="bottom" constant="25" id="O5C-8Z-nu0"/>
+                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="QWH-HZ-iF3"/>
+                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="centerX" secondItem="cs7-cY-JGw" secondAttribute="centerX" id="wXD-ns-nWn"/>
+                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zSm-hB-JBo"/>
+                            <constraint firstItem="dFq-Gv-TdA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="276" id="zlf-dp-2D7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
+            <point key="canvasLocation" x="50" y="374"/>
         </scene>
     </scenes>
 </document>
