@@ -21,6 +21,5 @@ struct QuestionViewModel {
         displayName = question.owner.displayName
         answerAmount = question.owner.reputation
         userImage = question.owner.profileImage
-            
     }
 }

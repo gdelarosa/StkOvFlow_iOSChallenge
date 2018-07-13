@@ -15,6 +15,7 @@ class HomeTableViewVC: UITableViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
     var questionViewModel: [QuestionViewModel] = [] {
         didSet {
             self.tableView.reloadData()
@@ -26,7 +27,7 @@ class HomeTableViewVC: UITableViewController {
         loadQuestions()
     }
     
-    private func loadQuestions() {
+    @objc private func loadQuestions() {
         questionTask?.cancel()
         
         activityIndicator.startAnimating()
@@ -47,10 +48,6 @@ class HomeTableViewVC: UITableViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
 
     // MARK: - Table view data source
 
@@ -70,25 +67,11 @@ class HomeTableViewVC: UITableViewController {
         
         return cell
     }
- 
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return false
-//    }
-  
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
     
-//    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let detailViewController = DetailViewController()
-//        navigationController?.pushViewController(detailViewController, animated: true)
-//    }
- 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            //QuestionViewModel.questionViewModel(for: indexPath.row)
+//        let detailsViewController = DetailViewController(viewModel: questionViewModel)
+//        present(detailsViewController, animated: true, completion: nil)
+    }
+    
 }
