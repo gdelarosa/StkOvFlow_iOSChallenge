@@ -10,6 +10,10 @@ import Foundation
 
 struct Constants {
     
-    static let stackExchangeApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
-    static let TableViewCell = "cell"
+    static let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
+    static let answerApi = "https://api.stackexchange.com/2.2/questions/%@/answers?order=desc&sort=activity&site=stackoverflow"
+    
+    static let QuestionTableViewCell = "cell"
+    static let AnswerTableViewCell = "answerCell"
+    
 }

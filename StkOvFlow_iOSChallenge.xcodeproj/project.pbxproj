@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77D596E520FBEE8E00724934 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D596E420FBEE8E00724934 /* Answer.swift */; };
+		77D596E720FBFCAE00724934 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D596E620FBFCAE00724934 /* AnswerViewModel.swift */; };
 		77DA13EC20FBDFFB003B8CFA /* AnswersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA13EB20FBDFFB003B8CFA /* AnswersTableViewCell.swift */; };
 		77E139A420F7A0CD009ECAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E139A320F7A0CD009ECAD8 /* AppDelegate.swift */; };
 		77E139A920F7A0CD009ECAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E139A720F7A0CD009ECAD8 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77D596E420FBEE8E00724934 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		77D596E620FBFCAE00724934 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		77DA13EB20FBDFFB003B8CFA /* AnswersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersTableViewCell.swift; sourceTree = "<group>"; };
 		77E139A020F7A0CD009ECAD8 /* StkOvFlow_iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StkOvFlow_iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E139A320F7A0CD009ECAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				77E139D020F82033009ECAD8 /* Item.swift */,
+				77D596E420FBEE8E00724934 /* Answer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				77E139D320F82132009ECAD8 /* QuestionViewModel.swift */,
+				77D596E620FBFCAE00724934 /* AnswerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				77E139DB20F823EB009ECAD8 /* ServiceError.swift in Sources */,
 				77E139D920F82336009ECAD8 /* ErrorHandling.swift in Sources */,
 				77E139E220F825E7009ECAD8 /* ImageExtension.swift in Sources */,
+				77D596E520FBEE8E00724934 /* Answer.swift in Sources */,
 				77E139C620F7CD3E009ECAD8 /* HomeTableViewCell.swift in Sources */,
 				77E139C420F7CAEE009ECAD8 /* HomeTableViewVC.swift in Sources */,
 				77E139A420F7A0CD009ECAD8 /* AppDelegate.swift in Sources */,
@@ -297,6 +304,7 @@
 				77E139DD20F82452009ECAD8 /* ServiceClient.swift in Sources */,
 				77E139C820F7DC1E009ECAD8 /* DetailViewController.swift in Sources */,
 				77E139DF20F824B3009ECAD8 /* ServiceReachability.swift in Sources */,
+				77D596E720FBFCAE00724934 /* AnswerViewModel.swift in Sources */,
 				77E139D720F8227D009ECAD8 /* Constants.swift in Sources */,
 				77DA13EC20FBDFFB003B8CFA /* AnswersTableViewCell.swift in Sources */,
 			);

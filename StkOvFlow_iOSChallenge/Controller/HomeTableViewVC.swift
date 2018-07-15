@@ -12,11 +12,9 @@ class HomeTableViewVC: UITableViewController {
     
     var questionTask: URLSessionDataTask!
     var errorHandling = ErrorHandling()
-    
     var detailsVC: DetailViewController?
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     
     var questionViewModel: [QuestionViewModel] = [] {
         didSet {
@@ -34,7 +32,7 @@ class HomeTableViewVC: UITableViewController {
         
         activityIndicator.startAnimating()
         
-        ServiceClient.sharedInstance.fetchData(urlString: Constants.stackExchangeApi) { [weak self]
+        ServiceClient.sharedInstance.fetchData(urlString: Constants.questionListApi) { [weak self]
             (questionResponse: QuestionResponse?, error: ServiceError?) in
             guard let controller = self else { return }
             
@@ -62,7 +60,7 @@ class HomeTableViewVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell, for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.QuestionTableViewCell, for: indexPath) as! HomeTableViewCell
         let questionViewModel = self.questionViewModel[indexPath.row]
         cell.questionViewModel = questionViewModel
         
@@ -73,7 +71,7 @@ class HomeTableViewVC: UITableViewController {
         if (detailsVC == nil) {
             detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "details") as? DetailViewController
         }
-        detailsVC?.questionModel = self.questionViewModel[indexPath.row] //item if not row
+        detailsVC?.questionModel = self.questionViewModel[indexPath.row]
         self.navigationController?.pushViewController(detailsVC! , animated: true)
     }
     
