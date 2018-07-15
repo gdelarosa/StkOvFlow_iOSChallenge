@@ -13,6 +13,8 @@ class HomeTableViewVC: UITableViewController {
     var questionTask: URLSessionDataTask!
     var errorHandling = ErrorHandling()
     
+    var detailsVC: DetailViewController?
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
@@ -69,9 +71,16 @@ class HomeTableViewVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            //QuestionViewModel.questionViewModel(for: indexPath.row)
-//        let detailsViewController = DetailViewController(viewModel: questionViewModel)
-//        present(detailsViewController, animated: true, completion: nil)
+//        let questionVM: QuestionViewModel
+//        let detailVC = DetailViewController()
+//        questionVM = self.questionViewModel[indexPath.row]
+//        present(detailVC, animated: true, completion: nil)
+        
+        if (detailsVC == nil) {
+            detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "details") as? DetailViewController
+        }
+        detailsVC?.questionModel = self.questionViewModel[indexPath.row] //item if not row
+        self.navigationController?.pushViewController(detailsVC! , animated: true)
     }
     
 }

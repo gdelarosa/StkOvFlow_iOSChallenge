@@ -83,7 +83,6 @@
                                     <outlet property="ownerDisplayNameLabel" destination="11C-nr-zdD" id="WLz-Ie-zo4"/>
                                     <outlet property="ownerProfileImage" destination="H6L-t2-BlS" id="k9J-sA-zeZ"/>
                                     <outlet property="questionTitleLabel" destination="bab-dm-DjW" id="0ML-ZD-EUd"/>
-                                    <segue destination="tGN-Ob-vwR" kind="show" id="JmI-Wj-AgU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -104,46 +103,38 @@
         <!--Detail View Controller-->
         <scene sceneID="MPn-Ru-4lk">
             <objects>
-                <viewController id="tGN-Ob-vwR" customClass="DetailViewController" customModule="StkOvFlow_iOSChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="details" id="tGN-Ob-vwR" customClass="DetailViewController" customModule="StkOvFlow_iOSChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sfh-Cu-7nR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-gm-xiF">
-                                <rect key="frame" x="20" y="86" width="163" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-gm-xiF">
+                                <rect key="frame" x="20" y="86" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body of question. Use `body_markdown` to display body text. (We don't expect you to parse the markdown)" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emD-q6-TFN">
-                                <rect key="frame" x="16" y="189" width="343" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5N-l2-qbq">
-                                <rect key="frame" x="20" y="111" width="82" height="70"/>
+                                <rect key="frame" x="20" y="121" width="82" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lU-FY-ePb">
-                                <rect key="frame" x="16" y="337" width="343" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Show Answers. For each answer show: Owner's profile image, Owner's display name, the answer using `body_markdown` to display text of answer</string>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Owner Display Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yb-ol-VfK">
-                                <rect key="frame" x="201" y="88" width="193" height="21"/>
+                                <rect key="frame" x="201" y="121" width="193" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-eP-7O9">
-                                <rect key="frame" x="231" y="108" width="163" height="21"/>
+                                <rect key="frame" x="231" y="141" width="163" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body of question. Use `body_markdown` to display body text. (We don't expect you to parse the markdown)" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emD-q6-TFN">
+                                <rect key="frame" x="20" y="213" width="378" height="310"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -154,6 +145,13 @@
                         <viewLayoutGuide key="safeArea" id="qQJ-nZ-Y04"/>
                     </view>
                     <navigationItem key="navigationItem" id="7az-WX-80v"/>
+                    <connections>
+                        <outlet property="answerBody" destination="emD-q6-TFN" id="UbQ-EQ-Xxo"/>
+                        <outlet property="displayName" destination="6yb-ol-VfK" id="yQy-Ch-hXA"/>
+                        <outlet property="questionTitle" destination="xJ1-gm-xiF" id="Mn4-DN-ZCo"/>
+                        <outlet property="reputation" destination="KG6-eP-7O9" id="9Xq-YS-Vx1"/>
+                        <outlet property="userImage" destination="m5N-l2-qbq" id="tFh-CE-bkx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59V-Kv-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
