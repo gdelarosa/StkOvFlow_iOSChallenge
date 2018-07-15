@@ -50,7 +50,6 @@ class HomeTableViewVC: UITableViewController {
         }
     }
 
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,11 +70,6 @@ class HomeTableViewVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let questionVM: QuestionViewModel
-//        let detailVC = DetailViewController()
-//        questionVM = self.questionViewModel[indexPath.row]
-//        present(detailVC, animated: true, completion: nil)
-        
         if (detailsVC == nil) {
             detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "details") as? DetailViewController
         }

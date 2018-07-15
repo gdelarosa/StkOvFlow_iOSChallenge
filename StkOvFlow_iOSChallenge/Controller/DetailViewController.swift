@@ -12,47 +12,28 @@ class DetailViewController: UIViewController {
     
     var questionModel:QuestionViewModel?
     
-    @IBOutlet weak var questionTitle: UILabel!
-    @IBOutlet weak var displayName: UILabel!
-    @IBOutlet weak var reputation: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var answerBody: UILabel!
+    @IBOutlet weak var detailQuestionTitleLabel: UILabel!
+    @IBOutlet weak var detailOwnerDisplayNameLabel: UILabel!
+    @IBOutlet weak var detailNumberAnswersLabel: UILabel!
+    @IBOutlet weak var detailOwnerProfileImage: UIImageView!
+    @IBOutlet weak var detailAnswerBody: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
-        questionTitle.text = questionModel?.title
-        displayName.text = questionModel?.displayName
-        
-//        if let reputation = questionModel?.answerAmount {
-//            reputation.text = String(reputation)
-//        } else {
-//            reputation?.text = ""
-//
-//        }
-//        if let userImage = questionModel?.userImage {
-//            userImage.loadImage(urlString: userImage)
-//        } else {
-//            userImage.showUnavailableImage()
-//        }
+        detailQuestionTitleLabel.text = questionModel?.title
+        detailOwnerDisplayNameLabel.text = questionModel?.displayName
+        if let reputation = questionModel?.answerAmount {
+            detailNumberAnswersLabel?.text = String(reputation)
+        } else {
+            detailNumberAnswersLabel?.text = ""
+            
+        }
+        if let userImage = questionModel?.userImage {
+            detailOwnerProfileImage.loadImage(urlString: userImage)
+        } else {
+            detailOwnerProfileImage.showUnavailableImage()
+        }
         
     }
-    
-//    var questionViewModel: QuestionViewModel! {
-//        didSet {
-//            questionTitleLabel?.text = questionViewModel.title
-//            ownerDisplayNameLabel?.text = questionViewModel.displayName
-//            if let reputation = questionViewModel.answerAmount {
-//                numberAnswersLabel?.text = String(reputation)
-//            } else {
-//                numberAnswersLabel?.text = ""
-//
-//            }
-//            if let userImage = questionViewModel.userImage {
-//                ownerProfileImage.loadImage(urlString: userImage)
-//            } else {
-//                ownerProfileImage.showUnavailableImage()
-//            }
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,5 +44,24 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
+    
+//        var questionViewModel: QuestionViewModel! {
+//            didSet {
+//                detailQuestionTitleLabel?.text = questionViewModel.title
+//                detailOwnerDisplayNameLabel?.text = questionViewModel.displayName
+//                if let reputation = questionViewModel.answerAmount {
+//                    detailNumberAnswersLabel?.text = String(reputation)
+//                } else {
+//                    detailNumberAnswersLabel?.text = ""
+//
+//                }
+//                if let userImage = questionViewModel.userImage {
+//                    detailOwnerProfileImage.loadImage(urlString: userImage)
+//                } else {
+//                    detailOwnerProfileImage.showUnavailableImage()
+//                }
+//            }
+//        }
+
 
 }
