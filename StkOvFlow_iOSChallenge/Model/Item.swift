@@ -8,30 +8,14 @@
 
 import Foundation
 
-//struct StackExchange: Codable {
-//    let items: [Item]
-//    let hasMore: Bool
-//    let quotaMax, quotaRemaining: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case items
-//        case hasMore = "has_more"
-//        case quotaMax = "quota_max"
-//        case quotaRemaining = "quota_remaining"
-//    }
-//}
-
 struct Item: Codable {
     let tags: [String]
     let owner: Owner
     let isAnswered: Bool
     let viewCount, answerCount, score, lastActivityDate: Int
-    let creationDate: Int
-    let lastEditDate: Int?
-    let questionID: Int
+    let creationDate, questionID: Int
     let link, title: String
-    let acceptedAnswerID, closedDate: Int?
-    let closedReason: String?
+    let acceptedAnswerID, lastEditDate: Int?
     
     enum CodingKeys: String, CodingKey {
         case tags, owner
@@ -41,20 +25,20 @@ struct Item: Codable {
         case score
         case lastActivityDate = "last_activity_date"
         case creationDate = "creation_date"
-        case lastEditDate = "last_edit_date"
         case questionID = "question_id"
         case link, title
         case acceptedAnswerID = "accepted_answer_id"
-        case closedDate = "closed_date"
-        case closedReason = "closed_reason"
+        case lastEditDate = "last_edit_date"
     }
 }
 
 struct Owner: Codable {
-    let reputation, userID: Int
+    let reputation, userID: Int?
     let userType: UserType
     let acceptRate: Int?
-    let profileImage, displayName, link: String
+    let profileImage: String?
+    let displayName: String
+    let link: String?
     
     enum CodingKeys: String, CodingKey {
         case reputation
@@ -68,9 +52,14 @@ struct Owner: Codable {
 }
 
 enum UserType: String, Codable {
+    case doesNotExist = "does_not_exist"
     case registered = "registered"
 }
 
 struct QuestionResponse: Codable {
     let items: [Item]
+    
+    enum CodingKeys: String, CodingKey {
+        case items
+    }
 }
