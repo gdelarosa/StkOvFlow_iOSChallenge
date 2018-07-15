@@ -17,51 +17,37 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailNumberAnswersLabel: UILabel!
     @IBOutlet weak var detailOwnerProfileImage: UIImageView!
     @IBOutlet weak var detailAnswerBody: UILabel!
+    @IBOutlet weak var answersTableView: UITableView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        detailQuestionTitleLabel.text = questionModel?.title
-        detailOwnerDisplayNameLabel.text = questionModel?.displayName
-        if let reputation = questionModel?.answerAmount {
-            detailNumberAnswersLabel?.text = String(reputation)
-        } else {
-            detailNumberAnswersLabel?.text = ""
-            
+        override func viewDidAppear(_ animated: Bool) {
+            detailQuestionTitleLabel.text = questionModel?.title
+            detailOwnerDisplayNameLabel.text = questionModel?.displayName
+            if let answer = questionModel?.answerAmount {
+                detailNumberAnswersLabel?.text = String(answer)
+            } else {
+                detailNumberAnswersLabel?.text = ""
+    
+            }
+            if let userImage = questionModel?.userImage {
+                detailOwnerProfileImage.loadImage(urlString: userImage)
+            } else {
+                detailOwnerProfileImage.showUnavailableImage()
+            }
+    
         }
-        if let userImage = questionModel?.userImage {
-            detailOwnerProfileImage.loadImage(urlString: userImage)
-        } else {
-            detailOwnerProfileImage.showUnavailableImage()
+    
+        override func viewDidLoad() {
+            super.viewDidLoad()
+    
         }
-        
-    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
     
-//        var questionViewModel: QuestionViewModel! {
-//            didSet {
-//                detailQuestionTitleLabel?.text = questionViewModel.title
-//                detailOwnerDisplayNameLabel?.text = questionViewModel.displayName
-//                if let reputation = questionViewModel.answerAmount {
-//                    detailNumberAnswersLabel?.text = String(reputation)
-//                } else {
-//                    detailNumberAnswersLabel?.text = ""
-//
-//                }
-//                if let userImage = questionViewModel.userImage {
-//                    detailOwnerProfileImage.loadImage(urlString: userImage)
-//                } else {
-//                    detailOwnerProfileImage.showUnavailableImage()
-//                }
-//            }
-//        }
+        }
 
+
+    
+    
 
 }

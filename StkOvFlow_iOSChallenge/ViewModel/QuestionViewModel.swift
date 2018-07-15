@@ -14,12 +14,17 @@ struct QuestionViewModel {
     var displayName: String?
     var userImage: String?
     var answerAmount: Int?
+    var questionID: Int?
     
-    //Dependency Injection
-    init(question: Item) {
-        title = question.title
-        displayName = question.owner.displayName
-        answerAmount = question.owner.reputation
-        userImage = question.owner.profileImage
-    }
+        //Dependency Injection
+        init(question: Item) {
+            title = question.title
+            displayName = question.owner.displayName
+            answerAmount = question.answerCount
+            userImage = question.owner.profileImage
+            questionID = question.questionID //may or may not need this
+        }
 }
+
+
+

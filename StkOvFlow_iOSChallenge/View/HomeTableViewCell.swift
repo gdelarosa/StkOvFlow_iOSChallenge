@@ -27,11 +27,10 @@ class HomeTableViewCell: UITableViewCell {
         didSet {
             questionTitleLabel?.text = questionViewModel.title
             ownerDisplayNameLabel?.text = questionViewModel.displayName
-            if let reputation = questionViewModel.answerAmount {
-                numberAnswersLabel?.text = String(reputation)
+            if let answers = questionViewModel.answerAmount {
+                numberAnswersLabel?.text = String(answers)
             } else {
                 numberAnswersLabel?.text = ""
-              
             }
             if let userImage = questionViewModel.userImage {
                 ownerProfileImage.loadImage(urlString: userImage)
