@@ -8,14 +8,9 @@
 
 import Foundation
 
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? JSONDecoder().decode(Welcome.self, from: jsonData)
-
-import Foundation
 
 struct Answer: Codable {
-    let items: [Item]
+    let items: [AnswerItem]
     let hasMore: Bool
     let quotaMax, quotaRemaining: Int
     
@@ -33,6 +28,8 @@ struct AnswerItem: Codable {
     let score, lastActivityDate: Int
     let lastEditDate: Int?
     let creationDate, answerID, questionID: Int
+    let body: String?
+    let bodyMarkdown: String?
     
     enum CodingKeys: String, CodingKey {
         case owner
@@ -43,14 +40,17 @@ struct AnswerItem: Codable {
         case creationDate = "creation_date"
         case answerID = "answer_id"
         case questionID = "question_id"
+        case body = "body"
+        case bodyMarkdown = "body_markdown"
     }
 }
 
 struct AnswerOwner: Codable {
-    let reputation, userID: Int
+    let reputation, userID: Int?
     let userType: String
     let acceptRate: Int?
-    let profileImage, displayName, link: String
+    let profileImage, displayName, link: String?
+    
     
     enum CodingKeys: String, CodingKey {
         case reputation

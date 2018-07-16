@@ -16,6 +16,7 @@ struct Item: Codable {
     let creationDate, questionID: Int
     let link, title: String
     let acceptedAnswerID, lastEditDate: Int?
+    let bodyMarkdown: String?
     
     enum CodingKeys: String, CodingKey {
         case tags, owner
@@ -29,6 +30,7 @@ struct Item: Codable {
         case link, title
         case acceptedAnswerID = "accepted_answer_id"
         case lastEditDate = "last_edit_date"
+        case bodyMarkdown = "body_markdown"
     }
 }
 

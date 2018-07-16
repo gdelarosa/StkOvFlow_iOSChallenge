@@ -17,23 +17,50 @@ struct ServiceClient {
         URLSession.shared.dataTask(with: url!) { (data, resp, err) in
 
             if !ServiceReachability.isConnectedToNetwork() {
-               // completion(QuestionResponse, .noInternetConnection)
+               print("No internet connection")
             }
             if let err = err {
                 print("Failed to fetch data:", err)
-               // completion(nil, .fetchFailed)
             }
 
             guard let data = data else { return }
 
             do {
                 let decoder = JSONDecoder()
-                let obj = try decoder.decode(QuestionResponse.self, from: data)
-                print(obj)
-                completion(obj, nil)
+                let response = try decoder.decode(QuestionResponse.self, from: data)
+                //print(obj)
+                completion(response, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)
-                //completion(nil, .decodeFailed)
+            }
+            }.resume()
+    }
+}
+
+struct AnswerClient {
+    
+    static let sharedInstance = AnswerClient()
+    
+    public func fetchData(urlString: String, completion: @escaping (Answer, ServiceError?) -> ()) {
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!) { (data, resp, err) in
+            
+            if !ServiceReachability.isConnectedToNetwork() {
+                print("No internet connection")
+            }
+            if let err = err {
+                print("Failed to fetch data:", err)
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let decoder = JSONDecoder()
+                let answerResponse = try decoder.decode(Answer.self, from: data)
+                print(answerResponse)
+                completion(answerResponse, nil)
+            } catch let jsonErr {
+                print("Failed to decode json:", jsonErr)
             }
             }.resume()
     }

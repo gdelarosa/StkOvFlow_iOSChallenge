@@ -15,6 +15,7 @@ struct QuestionViewModel {
     var userImage: String?
     var answerAmount: Int?
     var questionID: Int?
+    var answerBodyMarkdown: String?
     
         //Dependency Injection
         init(question: Item) {
@@ -23,6 +24,7 @@ struct QuestionViewModel {
             answerAmount = question.answerCount
             userImage = question.owner.profileImage
             questionID = question.questionID //may or may not need this
+            answerBodyMarkdown = question.bodyMarkdown
         }
 }
 
