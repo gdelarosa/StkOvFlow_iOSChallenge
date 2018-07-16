@@ -29,7 +29,7 @@ struct ServiceClient {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(QuestionResponse.self, from: data)
                 
-                //print(obj)
+                print(response)
                 completion(response, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)

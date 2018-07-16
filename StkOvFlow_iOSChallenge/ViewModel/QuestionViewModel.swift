@@ -20,9 +20,9 @@ struct QuestionViewModel {
         //Dependency Injection
         init(question: Item) {
             title = question.title
-            displayName = question.owner?.displayName
+            displayName = question.owner.displayName
             answerAmount = question.answerCount
-            userImage = question.owner?.profileImage
+            userImage = question.owner.profileImage
             questionID = question.questionID
             answerBodyMarkdown = question.bodyMarkdown
         }
