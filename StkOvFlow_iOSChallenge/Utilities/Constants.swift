@@ -11,9 +11,9 @@ import Foundation
 struct Constants {
     
      static let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow"
-     static let answerApi = "https://api.stackexchange.com/2.2/questions/1732348/answers?order=desc&sort=activity&site=stackoverflow" // Testing with 1732348
+     static let answerApi = "https://api.stackexchange.com/2.2/questions/1732348/answers?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wzftf" // Testing with 1732348
     
-     static let QuestionTableViewCell = "cell"
+     static let QuestionTableViewCell = "questionCell"
     static let AnswerTableViewCell = "answerCell"
     
 }

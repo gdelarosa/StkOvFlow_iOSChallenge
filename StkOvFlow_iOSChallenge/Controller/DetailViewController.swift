@@ -12,7 +12,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     var questionModel:QuestionViewModel?
-    var questionTask: URLSessionDataTask!
+    var answerTask: URLSessionDataTask!
     var errorHandling = ErrorHandling()
     //var questionID: String?
     
@@ -32,21 +32,19 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc private func loadAnswers() {
-        questionTask?.cancel()
-        
+        answerTask?.cancel()
         
         AnswerClient.sharedInstance.fetchData(urlString: Constants.answerApi) { [weak self]
             (answerResponse: Answer?, error: ServiceError?) in
             guard let controller = self else { return }
             
-//            DispatchQueue.main.async {
-//
-//                if let answers = answerResponse?.items {
-//                    controller.answerViewModel = answers.map({ return AnswerViewModel(answer: $0)})
-//                } else if let error = error {
-//                    controller.errorHandling.handleError(error)
-//                }
-//            }
+            DispatchQueue.main.async {
+                if let answers = answerResponse?.items {
+                    controller.answerViewModel = answers.map({ return AnswerViewModel(answer: $0)})
+                } else if let error = error {
+                    controller.errorHandling.handleError(error)
+                }
+            }
         }
     }
     
@@ -73,19 +71,18 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             loadAnswers()
         }
     
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-    
-        }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.answerViewModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AnswerTableViewCell, for: indexPath) as! AnswersTableViewCell
-//        let answerViewModel = self.answerViewModel[indexPath.row]
-//        cell.answerViewModel = answerViewModel
+        let answerViewModel = self.answerViewModel[indexPath.row]
+        cell.answerViewModel = answerViewModel
         
         return cell
     }

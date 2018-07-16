@@ -24,7 +24,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="94" id="oqh-AB-cA7" customClass="HomeTableViewCell" customModule="StkOvFlow_iOSChallenge" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="94" id="oqh-AB-cA7" customClass="HomeTableViewCell" customModule="StkOvFlow_iOSChallenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oqh-AB-cA7" id="E66-Gz-91U">
@@ -192,6 +192,7 @@
                     <connections>
                         <outlet property="answersTableView" destination="j50-FK-UkL" id="uBx-6c-RDU"/>
                         <outlet property="detailAnswerBody" destination="emD-q6-TFN" id="mgl-OY-MQO"/>
+                        <outlet property="detailBodyQuestion" destination="emD-q6-TFN" id="bjp-AE-ezI"/>
                         <outlet property="detailNumberAnswersLabel" destination="KG6-eP-7O9" id="wSb-bT-dXR"/>
                         <outlet property="detailOwnerDisplayNameLabel" destination="6yb-ol-VfK" id="OWk-Hg-7ic"/>
                         <outlet property="detailOwnerProfileImage" destination="m5N-l2-qbq" id="ZUf-TH-ynp"/>

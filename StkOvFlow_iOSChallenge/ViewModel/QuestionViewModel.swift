@@ -23,7 +23,7 @@ struct QuestionViewModel {
             displayName = question.owner.displayName
             answerAmount = question.answerCount
             userImage = question.owner.profileImage
-            questionID = question.questionID //may or may not need this
+            questionID = question.questionID
             answerBodyMarkdown = question.bodyMarkdown
         }
 }
