@@ -10,12 +10,12 @@ import Foundation
 
 
 struct Answer: Codable {
-    let items: [AnswerItem]
-    let hasMore: Bool
-    let quotaMax, quotaRemaining: Int
+    let answerItems: [AnswerItem]
+    let hasMore: Bool?
+    let quotaMax, quotaRemaining: Int?
     
     enum CodingKeys: String, CodingKey {
-        case items
+        case answerItems
         case hasMore = "has_more"
         case quotaMax = "quota_max"
         case quotaRemaining = "quota_remaining"
@@ -24,10 +24,10 @@ struct Answer: Codable {
 
 struct AnswerItem: Codable {
     let owner: AnswerOwner
-    let isAccepted: Bool
-    let score, lastActivityDate: Int
+    let isAccepted: Bool?
+    let score, lastActivityDate: Int?
     let lastEditDate: Int?
-    let creationDate, answerID, questionID: Int
+    let creationDate, answerID, questionID: Int?
     let body: String?
     let bodyMarkdown: String?
     
@@ -47,7 +47,7 @@ struct AnswerItem: Codable {
 
 struct AnswerOwner: Codable {
     let reputation, userID: Int?
-    let userType: String
+    let userType: String?
     let acceptRate: Int?
     let profileImage, displayName, link: String?
     

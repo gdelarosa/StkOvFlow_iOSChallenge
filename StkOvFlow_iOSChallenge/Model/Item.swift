@@ -10,11 +10,11 @@ import Foundation
 
 struct Item: Codable {
     let tags: [String]
-    let owner: Owner
-    let isAnswered: Bool
-    let viewCount, answerCount, score, lastActivityDate: Int
-    let creationDate, questionID: Int
-    let link, title: String
+    let owner: Owner?
+    let isAnswered: Bool?
+    let viewCount, answerCount, score, lastActivityDate: Int?
+    let creationDate, questionID: Int?
+    let link, title: String?
     let acceptedAnswerID, lastEditDate: Int?
     let bodyMarkdown: String?
     
@@ -39,7 +39,7 @@ struct Owner: Codable {
     let userType: UserType
     let acceptRate: Int?
     let profileImage: String?
-    let displayName: String
+    let displayName: String?
     let link: String?
     
     enum CodingKeys: String, CodingKey {

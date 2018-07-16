@@ -21,9 +21,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var detailOwnerDisplayNameLabel: UILabel!
     @IBOutlet weak var detailNumberAnswersLabel: UILabel!
     @IBOutlet weak var detailOwnerProfileImage: UIImageView!
-    @IBOutlet weak var detailAnswerBody: UILabel!
-    @IBOutlet weak var detailBodyQuestion: UILabel!
     @IBOutlet weak var answersTableView: UITableView!
+    @IBOutlet weak var questionBodytextView: UITextView!
     
     var answerViewModel: [AnswerViewModel] = [] {
         didSet {
@@ -39,7 +38,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             guard let controller = self else { return }
             
             DispatchQueue.main.async {
-                if let answers = answerResponse?.items {
+                if let answers = answerResponse?.answerItems {
                     controller.answerViewModel = answers.map({ return AnswerViewModel(answer: $0)})
                 } else if let error = error {
                     controller.errorHandling.handleError(error)
@@ -51,7 +50,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         override func viewDidAppear(_ animated: Bool) {
             detailQuestionTitleLabel.text = questionModel?.title
             detailOwnerDisplayNameLabel.text = questionModel?.displayName
-            detailAnswerBody.text = questionModel?.answerBodyMarkdown
+            questionBodytextView.text = questionModel?.answerBodyMarkdown
             if let answer = questionModel?.answerAmount {
                 detailNumberAnswersLabel?.text = String(answer)
             } else {
@@ -68,6 +67,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            answersTableView.estimatedRowHeight = 127
+            answersTableView.rowHeight = UITableViewAutomaticDimension
             loadAnswers()
         }
     

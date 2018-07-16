@@ -28,6 +28,7 @@ struct ServiceClient {
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(QuestionResponse.self, from: data)
+                
                 //print(obj)
                 completion(response, nil)
             } catch let jsonErr {
