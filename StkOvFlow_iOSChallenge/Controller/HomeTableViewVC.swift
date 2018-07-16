@@ -13,7 +13,8 @@ class HomeTableViewVC: UITableViewController {
     var questionTask: URLSessionDataTask!
     var errorHandling = ErrorHandling()
     var detailsVC: DetailViewController?
-    var pageIndex: UInt = 1
+    
+    var pageIndex: UInt = 0
     let pageSize: UInt = 100
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -26,16 +27,17 @@ class HomeTableViewVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadQuestions()
-        //requestAnswers(pageIndex: pageIndex, pageSize: pageSize)
+        loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
+       
     }
     
-    @objc private func loadQuestions() {
+    
+    @objc private func loadQuestions(pageIndex: UInt, pageSize: UInt) {
         questionTask?.cancel()
         
         activityIndicator.startAnimating()
         
-        ServiceClient.sharedInstance.fetchData(urlString: Constants.questionListApi) { [weak self]
+        ServiceClient.sharedInstance.fetchData(urlString: questionListApi, pageIndex: pageIndex, pageSize:pageSize) { [weak self]
             (questionResponse: QuestionResponse?, error: ServiceError?) in
             guard let controller = self else { return }
             
@@ -50,19 +52,6 @@ class HomeTableViewVC: UITableViewController {
             }
         }
     }
-    
-//    fileprivate func requestAnswers(pageIndex: UInt, pageSize: UInt) {
-//        StackManagerClosures.loadAnswers(forQuestion: currentQuestion!,
-//                                         pageIndex: pageIndex,
-//                                         pageSize: pageSize) { (answersOrNil, errorOrNil) in
-//                                            if let unwrappedAnswers = answersOrNil {
-//                                                self.answers.append(contentsOf: unwrappedAnswers)
-//                                                print("Questions : \(unwrappedAnswers.count)")
-//                                                self.table.reloadData()
-//                                            }
-//        }
-//    }
-    
 
     // MARK: - Table view data source
 
@@ -76,13 +65,13 @@ class HomeTableViewVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.QuestionTableViewCell, for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell, for: indexPath) as! HomeTableViewCell
         let questionViewModel = self.questionViewModel[indexPath.row]
         cell.questionViewModel = questionViewModel
         
         if (indexPath.row == self.questionViewModel.count - 1) {
-            pageIndex += 1
-            //self.requestAnswers(pageIndex: pageIndex, pageSize: pageSize)
+            //pageIndex += 1
+            self.loadQuestions(pageIndex: pageIndex, pageSize: pageSize)
         }
         
         return cell

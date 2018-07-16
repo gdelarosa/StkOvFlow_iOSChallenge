@@ -33,7 +33,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc private func loadAnswers() {
         answerTask?.cancel()
         
-        AnswerClient.sharedInstance.fetchData(urlString: Constants.answerApi) { [weak self]
+        AnswerClient.sharedInstance.fetchData(urlString: answerApi) { [weak self]
             (answerResponse: Answer?, error: ServiceError?) in
             guard let controller = self else { return }
             
@@ -81,7 +81,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AnswerTableViewCell, for: indexPath) as! AnswersTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell, for: indexPath) as! AnswersTableViewCell
         let answerViewModel = self.answerViewModel[indexPath.row]
         cell.answerViewModel = answerViewModel
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7799374320FD07D30025C78B /* ServiceClosures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7799374220FD07D30025C78B /* ServiceClosures.swift */; };
 		77D596E520FBEE8E00724934 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D596E420FBEE8E00724934 /* Answer.swift */; };
 		77D596E720FBFCAE00724934 /* AnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D596E620FBFCAE00724934 /* AnswerViewModel.swift */; };
 		77DA13EC20FBDFFB003B8CFA /* AnswersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA13EB20FBDFFB003B8CFA /* AnswersTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7799374220FD07D30025C78B /* ServiceClosures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClosures.swift; sourceTree = "<group>"; };
 		77D596E420FBEE8E00724934 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		77D596E620FBFCAE00724934 /* AnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewModel.swift; sourceTree = "<group>"; };
 		77DA13EB20FBDFFB003B8CFA /* AnswersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				77E139DA20F823EB009ECAD8 /* ServiceError.swift */,
 				77E139DC20F82452009ECAD8 /* ServiceClient.swift */,
 				77E139DE20F824B3009ECAD8 /* ServiceReachability.swift */,
+				7799374220FD07D30025C78B /* ServiceClosures.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E139DB20F823EB009ECAD8 /* ServiceError.swift in Sources */,
+				7799374320FD07D30025C78B /* ServiceClosures.swift in Sources */,
 				77E139D920F82336009ECAD8 /* ErrorHandling.swift in Sources */,
 				77E139E220F825E7009ECAD8 /* ImageExtension.swift in Sources */,
 				77D596E520FBEE8E00724934 /* Answer.swift in Sources */,

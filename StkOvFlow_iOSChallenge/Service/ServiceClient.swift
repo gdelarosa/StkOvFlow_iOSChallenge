@@ -11,8 +11,11 @@ import Foundation
 struct ServiceClient {
 
     static let sharedInstance = ServiceClient()
+    private static let maximumPageSize: UInt = 100
 
-    public func fetchData(urlString: String, completion: @escaping (QuestionResponse, ServiceError?) -> ()) {
+    public func fetchData(urlString: String, pageIndex: UInt, pageSize: UInt, completion: @escaping (QuestionResponse, ServiceError?) -> ()) {
+        //let maxPageSize = ServiceClient.maximumPageSize
+    
         let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!) { (data, resp, err) in
 
@@ -28,7 +31,7 @@ struct ServiceClient {
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(QuestionResponse.self, from: data)
-                print("QUESTION: \(response)")
+                //print("QUESTION: \(response)")
                 completion(response, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)

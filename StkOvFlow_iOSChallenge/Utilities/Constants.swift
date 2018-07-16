@@ -8,13 +8,11 @@
 
 import Foundation
 
+var forQuestion: Item?
+let questionID = forQuestion?.questionID
+let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow&filter=!9Z(-wwK4f"
+let answerApi = "https://api.stackexchange.com/2.2/questions/\(String(describing: questionID))/answers?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wzftf"
+let QuestionTableViewCell = "questionCell"
+let AnswerTableViewCell = "answerCell"
 
-struct Constants {
-    
-     static let questionListApi = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=swift&site=stackoverflow&filter=!9Z(-wwK4f"
-     static let answerApi = "https://api.stackexchange.com/2.2/questions/1732348/answers?order=desc&sort=activity&site=stackoverflow&filter=!9Z(-wzftf" // Testing with 1732348
-    
-     static let QuestionTableViewCell = "questionCell"
-    static let AnswerTableViewCell = "answerCell"
-    
-}
+
