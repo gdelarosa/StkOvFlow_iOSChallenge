@@ -60,7 +60,7 @@ struct AnswerClient {
             do {
                 let decoder = JSONDecoder()
                 let answerResponse = try decoder.decode(Answer.self, from: data)
-                print("ANSWERS: \(answerResponse)")
+                //print("ANSWERS: \(answerResponse)")
                 completion(answerResponse, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)

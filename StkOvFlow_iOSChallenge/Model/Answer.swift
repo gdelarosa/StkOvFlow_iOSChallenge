@@ -9,7 +9,7 @@
 import Foundation
 
 struct Answer: Codable {
-    let answerItems: [AnswerItem]?
+    let answerItems: [AnswerItem]
     let hasMore: Bool?
     let quotaMax, quotaRemaining: Int?
     
@@ -22,35 +22,34 @@ struct Answer: Codable {
 }
 
 struct AnswerItem: Codable {
-    let answerOwner: AnswerOwner
+    let owner: AnswerOwner
     let isAccepted: Bool?
-    let communityOwnedDate: Int?
     let score, lastActivityDate: Int?
     let lastEditDate: Int?
     let creationDate, answerID, questionID: Int?
+    let body: String?
     let bodyMarkdown: String?
     
     enum CodingKeys: String, CodingKey {
-        case answerOwner
+        case owner
         case isAccepted = "is_accepted"
-        case communityOwnedDate = "community_owned_date"
         case score
         case lastActivityDate = "last_activity_date"
         case lastEditDate = "last_edit_date"
         case creationDate = "creation_date"
         case answerID = "answer_id"
         case questionID = "question_id"
+        case body = "body"
         case bodyMarkdown = "body_markdown"
     }
 }
 
 struct AnswerOwner: Codable {
     let reputation, userID: Int?
-    let userType: AnswerUserType
+    let userType: String?
     let acceptRate: Int?
-    let profileImage: String?
-    let displayName: String
-    let link: String?
+    let profileImage, displayName, link: String?
+    
     
     enum CodingKeys: String, CodingKey {
         case reputation
@@ -62,10 +61,3 @@ struct AnswerOwner: Codable {
         case link
     }
 }
-
-enum AnswerUserType: String, Codable {
-    case doesNotExist = "does_not_exist"
-    case registered = "registered"
-    case unregistered = "unregistered"
-}
-
