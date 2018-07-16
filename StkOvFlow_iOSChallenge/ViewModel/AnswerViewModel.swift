@@ -16,7 +16,7 @@ struct AnswerViewModel {
    
     init(answer: AnswerItem) {
         answerBody = answer.bodyMarkdown
-        displayName = answer.owner.displayName
-        userImage =  answer.owner.profileImage
+        displayName = answer.answerOwner.displayName
+        userImage =  answer.answerOwner.profileImage
     }
 }

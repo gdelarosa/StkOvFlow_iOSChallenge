@@ -28,8 +28,7 @@ struct ServiceClient {
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(QuestionResponse.self, from: data)
-                
-                print(response)
+                print("QUESTION: \(response)")
                 completion(response, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)
@@ -41,24 +40,24 @@ struct ServiceClient {
 struct AnswerClient {
     
     static let sharedInstance = AnswerClient()
-    
+
     public func fetchData(urlString: String, completion: @escaping (Answer, ServiceError?) -> ()) {
         let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!) { (data, resp, err) in
-            
+
             if !ServiceReachability.isConnectedToNetwork() {
                 print("No internet connection")
             }
             if let err = err {
                 print("Failed to fetch data:", err)
             }
-            
+
             guard let data = data else { return }
-            
+
             do {
                 let decoder = JSONDecoder()
                 let answerResponse = try decoder.decode(Answer.self, from: data)
-                print(answerResponse)
+                print("ANSWERS: \(answerResponse)")
                 completion(answerResponse, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)

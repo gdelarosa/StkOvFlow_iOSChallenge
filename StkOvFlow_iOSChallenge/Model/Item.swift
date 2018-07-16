@@ -4,16 +4,15 @@
 //
 //  Created by Gina De La Rosa on 7/12/18.
 //  Copyright © 2018 Gina De La Rosa. All rights reserved.
-//  Resource: https://app.quicktype.io/#l=swift to quickly parse JSON
 
 import Foundation
 
 struct Item: Codable {
     let tags: [String]
-    let owner: Owner?
+    let owner: Owner
     let isAnswered: Bool?
     let viewCount, answerCount, score, lastActivityDate: Int?
-    let creationDate, questionID: Int?
+    let creationDate, questionID: Int? //UInt
     let link, title: String?
     let acceptedAnswerID, lastEditDate: Int?
     let bodyMarkdown: String?
