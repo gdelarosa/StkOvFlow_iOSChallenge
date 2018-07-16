@@ -3,7 +3,7 @@
 **Requirements** 
 - Use the StackOverflow Search endpoint
 - Displays title, display name, profile image, and number of answers
-- Supports pagination 
+- Support pagination 
 - Clicking on question will push to new viewcontroller displaying answer
 - Show body of question. Use 'body_markdown' to display body text
 - Show answer with previous info: title, display name, profile image, number of answers, along with body
@@ -18,8 +18,7 @@
 - UIActivityIndicator is used when loading data to tableview 
 - Pushed from Cell to new ViewController to display answer information
 - Error handling is implemented in case there is no internet connetion or failure 
-- NSCache is used to temporarily store images
-- Unit Testing 
+- NSCache is used to temporarily store images 
 
 **Resources:** 
 https://app.quicktype.io/ - Used to quickly parse JSON
