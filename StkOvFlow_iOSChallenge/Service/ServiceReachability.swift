@@ -4,6 +4,7 @@
 //
 //  Created by Gina De La Rosa on 7/12/18.
 //  Copyright © 2018 Gina De La Rosa. All rights reserved.
+//  Class used if to check if there is internet connection.
 //  https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
 
 import Foundation

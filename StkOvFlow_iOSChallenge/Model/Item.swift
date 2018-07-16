@@ -12,7 +12,7 @@ struct Item: Codable {
     let owner: Owner
     let isAnswered: Bool?
     let viewCount, answerCount, score, lastActivityDate: Int?
-    let creationDate, questionID: Int? //UInt
+    let creationDate, questionID: Int?
     let link, title: String?
     let acceptedAnswerID, lastEditDate: Int?
     let bodyMarkdown: String?

@@ -4,7 +4,7 @@
 //
 //  Created by Gina De La Rosa on 7/12/18.
 //  Copyright © 2018 Gina De La Rosa. All rights reserved.
-//
+//  Will display questions from the API URL in the Constants folder
 
 import UIKit
 

@@ -13,7 +13,7 @@ struct AnswerViewModel {
     var answerBody: String?
     var displayName: String?
     var userImage: String?
-   
+    
     init(answer: AnswerItem) {
         answerBody = answer.bodyMarkdown
         displayName = answer.owner.displayName
